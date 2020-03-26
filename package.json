@@ -14,6 +14,7 @@
   "dependencies": {
     "eslint": "^6.8.0",
     "fs-extra": "^9.0.0",
+    "lucify-embed-code": "^0.1.2",
     "next": "^9.3.1",
     "prettier": "^2.0.1",
     "react": "^16.13.1",
