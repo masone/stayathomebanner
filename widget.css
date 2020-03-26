@@ -1,0 +1,22 @@
+body {
+  color: #FFF;
+  background: #777777;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-size: 14px;
+  padding: 20px;
+  margin: 0;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+a {
+  color: #75c5ed;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

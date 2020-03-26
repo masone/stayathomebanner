@@ -1,0 +1,19 @@
+{
+  "title": {
+    "en": "Please stay at home",
+    "de": "Bitte bleiben Sie zu Hause",
+    "fr": "Restez à la maison svp",
+    "it": "Restate a casa"
+  },
+  "text": {
+    "de-ch": "insbesondere wenn Sie krank sind oder 65 Jahre alt oder älter sind",
+    "fr-ch": "en particulier si vous êtes âgé ou malade",
+    "it-ch": "soprattutto se siete in età avanzata o malati"
+  },
+  "link": {
+    "en": "Learn more",
+    "de": "Mehr informationen",
+    "fr": "En savoir plus",
+    "it": "Maggiori informazioni"
+  }
+}
