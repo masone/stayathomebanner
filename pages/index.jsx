@@ -2,8 +2,8 @@ import embedCode from 'lucify-embed-code'
 
 const iFrameUrl = '/v1/widget/de-ch';
 const code = embedCode.getIFrameEmbedCodeWithRemoteResize("http://localhost:3000/v1/", iFrameUrl)
-  .replace("/resize.js", "/corona-widget.js")
-  .replace("lucify-", "corona-widget-")
+  .replace(/\/resize\.js/g, "/corona-widget.js")
+  .replace(/lucify-/g, "corona-widget-")
 
 function Widget() {
   return (
