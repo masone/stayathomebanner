@@ -9,6 +9,11 @@ function Widget({ title, text, url, link }) {
       <h1>{title}</h1>
       {text ? <p>{text}</p> : null }
       {url && link ? <a href={url}>{link}</a> : null}
+      <a onClick={() => {
+        if ('parentIFrame' in window) {window.parentIFrame.close();}
+        return false;
+      }}>close</a>
+      <script src="/iframe.js"></script>
     </>
   )
 }

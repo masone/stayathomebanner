@@ -1,20 +1,23 @@
-import embedCode from 'lucify-embed-code'
-
-const iFrameUrl = '/v1/widget/de-ch';
-const code = embedCode.getIFrameEmbedCodeWithRemoteResize("http://localhost:3000/v1/", iFrameUrl)
-  .replace(/\/resize\.js/g, "/corona-widget.js")
-  .replace(/lucify-/g, "corona-widget-")
+const getCode = (locale, prod=true) => {
+  const host = prod ? 'https://embed.stayathomebanner.com' : 'http://localhost:3000'
+  return `
+<iframe class="stayathomebanner" src="/${locale}" width="100%" scrolling="no" frameborder="0"></iframe>
+<script src="${host}/v1.js"></script>
+  `
+}
 
 function Widget() {
   return (
-    <>
-      <h1>Please stay at home widget</h1>
-      <p>Insert the following script where you want to render the widget.</p>
-      <code>{code}</code>
+    <div style={{background: "white", color: "black", padding: "10px"}}>
+      <h2>Code</h2>
+      <textarea defaultValue={getCode("de-ch")} rows="5" cols="100"></textarea>
 
-      <h2>Example</h2>
-      <div dangerouslySetInnerHTML={{__html: code}}></div>
-    </>
+      <h2>Examples</h2>
+      <div dangerouslySetInnerHTML={{__html: getCode("de-ch", false)}} />
+      <div dangerouslySetInnerHTML={{__html: getCode("en-us", false)}} />
+      <div dangerouslySetInnerHTML={{__html: getCode("de", false)}} />
+      <div dangerouslySetInnerHTML={{__html: getCode("en", false)}} />
+    </div>
   )
 }
 
