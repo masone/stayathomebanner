@@ -6,11 +6,13 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "cypress run"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cypress": "^4.2.0",
     "eslint": "^6.8.0",
     "fs-extra": "^9.0.0",
     "next": "^9.3.1",
