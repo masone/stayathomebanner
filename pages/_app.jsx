@@ -1,4 +1,4 @@
-import '../widget.css'
-import App from 'next/app'
+import "../widget.css";
+import App from "next/app";
 
-export default App
+export default App;

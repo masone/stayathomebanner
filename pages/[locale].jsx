@@ -1,30 +1,36 @@
-import {readJSONSync} from "fs-extra"
+import { readJSONSync } from "fs-extra";
 
-const languages = readJSONSync("./data/languages.json")
-const urls = readJSONSync("./data/urls.json")
+const languages = readJSONSync("./data/languages.json");
+const urls = readJSONSync("./data/urls.json");
 
 function Widget({ title, text, url, link }) {
   return (
     <>
       <h1>{title}</h1>
-      {text ? <p>{text}</p> : null }
+      {text ? <p>{text}</p> : null}
       {url && link ? <a href={url}>{link}</a> : null}
-      <a onClick={() => {
-        if ('parentIFrame' in window) {window.parentIFrame.close();}
-        return false;
-      }}>close</a>
+      <a
+        onClick={() => {
+          if ("parentIFrame" in window) {
+            window.parentIFrame.close();
+          }
+          return false;
+        }}
+      >
+        close
+      </a>
       <script src="/iframe.js"></script>
     </>
-  )
+  );
 }
 
-function getDataWithFallback(data, locale, language){
-  return data ? data[locale] || data[language] || "" : ""
+function getDataWithFallback(data, locale, language) {
+  return data ? data[locale] || data[language] || "" : "";
 }
 
-export async function getStaticProps({params}) {
-  const locale = params.locale
-  const language = locale.split("-")[0]
+export async function getStaticProps({ params }) {
+  const locale = params.locale;
+  const language = locale.split("-")[0];
 
   return {
     props: {
@@ -33,7 +39,7 @@ export async function getStaticProps({params}) {
       link: getDataWithFallback(languages.link, locale, language),
       url: getDataWithFallback(urls, locale, language) || "",
     },
-  }
+  };
 }
 
 export async function getStaticPaths() {
@@ -44,8 +50,8 @@ export async function getStaticPaths() {
       { params: { locale: "en-ch" } },
       { params: { locale: "en-us" } },
     ],
-    fallback: false
+    fallback: false,
   };
 }
 
-export default Widget
+export default Widget;
