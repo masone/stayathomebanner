@@ -11,6 +11,7 @@
     }
   },
   "env": {
-    "cypress/globals": true
+    "cypress/globals": true,
+    "node": true
   }
 }
