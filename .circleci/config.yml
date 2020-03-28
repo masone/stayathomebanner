@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        key: v1-npm-{{ checksum "package-lock.json" }}
+          key: v1-npm-{{ checksum "package-lock.json" }}
       - run: npm ci
       - run: npm ls
       - save_cache:
