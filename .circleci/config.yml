@@ -6,7 +6,7 @@ jobs:
       - image: cypress/base:10
     steps:
       - checkout
-      - run: npm install
+      - run: npm ci
       - run: npm ls
       - run: CYPRESS_BASE_URL=https://stayathomebanner-git-${CIRCLE_BRANCH}.masone.now.sh npx cypress run
       - store_artifacts:
