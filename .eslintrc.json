@@ -1,4 +1,16 @@
 {
-  "extends": ["plugin:prettier/recommended"],
-  "ignorePatterns": ["public"]
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "ignorePatterns": ["public"],
+  "plugins": ["react", "cypress"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "cypress/globals": true
+  }
 }
