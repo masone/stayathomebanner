@@ -7,9 +7,13 @@ jobs:
     runs-on: ubuntu-16.04
     steps:
       - uses: actions/checkout@v1
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
       - uses: cypress-io/github-action@v1
         env:
-          CYPRESS_BASE_URL: https://stayathomebanner-git-${GITHUB_REF##*/}.masone.now.sh
+          CYPRESS_BASE_URL: https://stayathomebanner-git-${{ extract_branch.outputs.branch }}.masone.now.sh
         with:
           headless: true
 
