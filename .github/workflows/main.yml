@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: cypress-io/github-action@v1
         env:
-          CYPRESS_BASE_URL: https://stayathomebanner-git-${{ github.head_ref }}.masone.now.sh
+          CYPRESS_BASE_URL: https://stayathomebanner-git-${GITHUB_REF##*/}.masone.now.sh
         with:
           headless: true
 
