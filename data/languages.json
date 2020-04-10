@@ -6,14 +6,21 @@
     "it": "Restate a casa"
   },
   "text": {
-    "de-ch": "insbesondere wenn Sie krank sind oder 65 Jahre alt oder älter sind",
-    "fr-ch": "en particulier si vous êtes âgé ou malade",
-    "it-ch": "soprattutto se siete in età avanzata o malati"
+    "en-ch": "to protect yourself and others. Let’s work together and",
+    "de-ch": "um sich selbst und andere zu schützen. Lassen Sie uns zusammenarbeiten und",
+    "fr-ch": "pour se protéger et protéger les autres. Travaillons ensemble et",
+    "it-ch": "per proteggere te stesso e gli altri. Lavoriamo insieme e"
   },
   "link": {
-    "en": "Learn more",
-    "de": "Mehr informationen",
-    "fr": "En savoir plus",
-    "it": "Maggiori informazioni"
+    "en": "fight against Corona virus",
+    "de": "kampf gegen das Corona-Virus",
+    "fr": "lutte contre le virus Corona",
+    "it": "lotta contro il virus Corona"
+  },
+  "getBanner": {
+    "en": "Get this banner on your site",
+    "de": "Holen Sie sich dieses Banner auf Ihre Website",
+    "fr": "Obtenez cette bannière sur votre site",
+    "it": "Scarica questo banner sul tuo sito"
   }
 }

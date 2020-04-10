@@ -3,13 +3,28 @@ import { readJSONSync } from "fs-extra";
 const languages = readJSONSync("./data/languages.json");
 const urls = readJSONSync("./data/urls.json");
 
-function Widget({ title, text, url, link }) {
+function Widget({ title, text, url, link, getBanner }) {
   return (
-    <>
-      <h1>{title}</h1>
-      {text ? <p>{text}</p> : null}
-      {url && link ? <a href={url}>{link}</a> : null}
+    <div className="main-container">
+      <div className="container">
+        <div className="icon" />
+        <div className="container-text">
+          <span className="text-title">{title}</span>
+          <div className="text-info">
+            {text ? <div>{text}&nbsp;</div> : null}
+            {url ? (
+              <a href={url} target="__blank">
+                {link}
+              </a>
+            ) : null}
+          </div>
+          <a href={""} target="__blank" className="get-banner">
+            {getBanner}
+          </a>
+        </div>
+      </div>
       <a
+        className="close"
         onClick={() => {
           if ("parentIFrame" in window) {
             window.parentIFrame.close();
@@ -17,10 +32,10 @@ function Widget({ title, text, url, link }) {
           return false;
         }}
       >
-        close
+        X
       </a>
       <script src="/iframe.js"></script>
-    </>
+    </div>
   );
 }
 
@@ -37,6 +52,7 @@ export async function getStaticProps({ params }) {
       title: getDataWithFallback(languages.title, locale, language),
       text: getDataWithFallback(languages.text, locale, language),
       link: getDataWithFallback(languages.link, locale, language),
+      getBanner: getDataWithFallback(languages.getBanner, locale, language),
       url: getDataWithFallback(urls, locale, language) || "",
     },
   };
@@ -45,7 +61,6 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   return {
     paths: [
-      { params: { locale: "de" } },
       { params: { locale: "de-ch" } },
       { params: { locale: "en-ch" } },
       { params: { locale: "en-us" } },

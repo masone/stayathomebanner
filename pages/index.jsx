@@ -8,14 +8,18 @@ function Widget({ host }) {
   };
 
   return (
-    <div style={{ background: "white", color: "black", padding: "10px" }}>
+    <div className="wrapper">
       <h2>Code</h2>
-      <textarea defaultValue={getCode("de-ch")} rows="5" cols="100"></textarea>
+      <textarea
+        style={{ border: "1px solid grey", fontSize: "14px" }}
+        defaultValue={getCode("de-ch")}
+        rows="5"
+        cols="100"
+      />
 
       <h2>Examples</h2>
       <div dangerouslySetInnerHTML={{ __html: getCode("de-ch") }} />
-      <div dangerouslySetInnerHTML={{ __html: getCode("en-us") }} />
-      <div dangerouslySetInnerHTML={{ __html: getCode("de") }} />
+      <div dangerouslySetInnerHTML={{ __html: getCode("en-ch") }} />
       <div dangerouslySetInnerHTML={{ __html: getCode("en") }} />
     </div>
   );
