@@ -11,16 +11,23 @@ function Widget({ title, text, url, link, getBanner }) {
         <div className="container-text">
           <span className="text-title">{title}</span>
           <div className="text-info">
-            {text ? <div>{text}&nbsp;</div> : null}
+            {text ? <>{text}&nbsp;</> : null}
             {url ? (
-              <a href={url} target="__blank">
+              <a href={url} target="__blank" rel="noopener noreferrer">
                 {link}
               </a>
             ) : null}
           </div>
-          <a href={""} target="__blank" className="get-banner">
-            {getBanner}
-          </a>
+          {getBanner ? (
+            <a
+              className="get-banner"
+              href="https://stayathomebanner.com"
+              target="__blank"
+              rel="noopener noreferrer"
+            >
+              {getBanner}
+            </a>
+          ) : null}
         </div>
       </div>
       <a
