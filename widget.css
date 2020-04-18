@@ -30,7 +30,7 @@ a:hover {
 .main-container {
   display: flex;
   background-color: #787878;
-  background-image: linear-gradient(to bottom, #787878, #000000 98%);
+  background-image: url("icons/covid.svg"), linear-gradient(to bottom, #787878, #000000 98%);
 }
 
 .container {
@@ -44,7 +44,7 @@ a:hover {
   height: 76px;
   width: 115px;
   object-fit: contains;
-  background: url("icons/doctors.png");
+  background: url("icons/doctors.svg");
   background-size: 77px;
   background-repeat: no-repeat;
 }
