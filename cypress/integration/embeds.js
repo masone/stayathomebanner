@@ -11,7 +11,6 @@ context("Embeds", () => {
       expect($iframe.outerHeight()).to.be.lessThan(150);
     });
     // cy.get("#iFrameResizer2[style*=height]").then(($iframe) => {
-    //   console.log($iframe)
     //   expect($iframe.outerHeight()).to.be.lessThan(150)
     // })
   });
