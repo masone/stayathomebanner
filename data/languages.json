@@ -6,10 +6,10 @@
     "it": "Restate a casa"
   },
   "text": {
-    "en-ch": "to protect yourself and others. Let’s work together and",
-    "de-ch": "um sich selbst und andere zu schützen. Lassen Sie uns zusammenarbeiten und",
-    "fr-ch": "pour se protéger et protéger les autres. Travaillons ensemble et",
-    "it-ch": "per proteggere te stesso e gli altri. Lavoriamo insieme e"
+    "en": "to protect yourself and others. Let’s work together and",
+    "de": "um sich selbst und andere zu schützen. Lassen Sie uns zusammenarbeiten und",
+    "fr": "pour se protéger et protéger les autres. Travaillons ensemble et",
+    "it": "per proteggere te stesso e gli altri. Lavoriamo insieme e"
   },
   "link": {
     "en": "fight against Corona virus",
@@ -19,7 +19,7 @@
   },
   "getBanner": {
     "en": "Get this banner on your site",
-    "de": "Holen Sie sich dieses Banner auf Ihre Website",
+    "de": "Diesen Hinweis auf Ihre Website anzeigen",
     "fr": "Obtenez cette bannière sur votre site",
     "it": "Scarica questo banner sul tuo sito"
   }
