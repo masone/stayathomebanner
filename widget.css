@@ -78,11 +78,10 @@ a:hover {
 }
 
 .close {
-  font-size: 12px;
-  align-self: flex-start;
-  color: black;
   cursor: pointer;
-  padding: 7px;
+  padding: 15px;
+  background: url(icons/close.svg);
+  background-repeat: no-repeat;
 }
 
 @media (min-width: 425px) {
@@ -92,10 +91,6 @@ a:hover {
   .icon {
     width: 90px;
     margin: 5px;
-  }
-  .close {
-    font-size: 14px;
-    padding: 12px;
   }
 }
 
