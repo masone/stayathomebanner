@@ -3,21 +3,21 @@ import { readJSONSync } from "fs-extra";
 const languages = readJSONSync("./languages.json");
 const renderLink = (t, url) => {
   const unlinked = t.replace(/[{}]/g, "");
-  if (url) {
-    const matched = t.match(/(.*)\{(.*)\}/);
-    return matched ? (
-      <span>
-        {matched[1]}
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          {matched[2]}
-        </a>
-      </span>
-    ) : (
-      unlinked
-    );
-  } else {
+  if (!url) {
     return unlinked;
   }
+
+  const matched = t.match(/(.*)\{(.*)\}/);
+  return matched ? (
+    <span>
+      {matched[1]}
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        {matched[2]}
+      </a>
+    </span>
+  ) : (
+    unlinked
+  );
 };
 
 function Widget({ title, text, url, getBanner }) {
