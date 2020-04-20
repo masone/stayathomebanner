@@ -13,7 +13,7 @@ function Widget({ title, text, url, link, getBanner }) {
           <div className="text-info">
             {text ? <>{text}&nbsp;</> : null}
             {url ? (
-              <a href={url} target="__blank" rel="noopener noreferrer">
+              <a href={url} target="_blank" rel="noopener noreferrer">
                 {link}
               </a>
             ) : null}
@@ -22,7 +22,7 @@ function Widget({ title, text, url, link, getBanner }) {
             <a
               className="get-banner"
               href="https://stayathomebanner.com"
-              target="__blank"
+              target="_blank"
               rel="noopener noreferrer"
             >
               {getBanner}
@@ -68,9 +68,13 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   return {
     paths: [
+      { params: { locale: "en" } },
+      { params: { locale: "de" } },
+      { params: { locale: "it" } },
+      { params: { locale: "fr" } },
       { params: { locale: "de-ch" } },
-      { params: { locale: "en-ch" } },
-      { params: { locale: "en-us" } },
+      { params: { locale: "it-ch" } },
+      { params: { locale: "fr-ch" } },
     ],
     fallback: false,
   };
