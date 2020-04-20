@@ -79,11 +79,9 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const availableLanguages = Object.keys(languages).map(
-    (language) => "/" + language
-  );
+  const availableLanguages = Object.keys(languages);
   return {
-    paths: availableLanguages,
+    paths: availableLanguages.map((language) => "/" + language),
     fallback: false,
   };
 }
