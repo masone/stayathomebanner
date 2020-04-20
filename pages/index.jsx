@@ -18,9 +18,9 @@ function Widget({ host }) {
       />
 
       <h2>Examples</h2>
-      <div dangerouslySetInnerHTML={{ __html: getCode("de-ch") }} />
-      <div dangerouslySetInnerHTML={{ __html: getCode("en-ch") }} />
       <div dangerouslySetInnerHTML={{ __html: getCode("en") }} />
+      <div dangerouslySetInnerHTML={{ __html: getCode("de-ch") }} />
+      <div dangerouslySetInnerHTML={{ __html: getCode("en-us") }} />
     </div>
   );
 }
