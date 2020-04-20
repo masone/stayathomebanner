@@ -1,7 +1,7 @@
 import { readJSONSync } from "fs-extra";
 
 const languages = readJSONSync("./languages.json");
-const renderLink = (t, url) => {
+const renderText = (t, url) => {
   const unlinked = t.replace(/[{}]/g, "");
   if (!url) {
     return unlinked;
@@ -27,7 +27,7 @@ function Widget({ title, text, url, getBanner }) {
         <div className="icon" />
         <div className="container-text">
           <span className="text-title">{title}</span>
-          <div className="text-info">{renderLink(text, url)}</div>
+          <div className="text-info">{renderText(text, url)}</div>
           {getBanner ? (
             <a
               className="get-banner"
