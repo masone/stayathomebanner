@@ -48,9 +48,7 @@ function Widget({ title, text, url, getBanner }) {
           }
           return false;
         }}
-      >
-        X
-      </a>
+      />
       <script src="/iframe.js"></script>
     </div>
   );
