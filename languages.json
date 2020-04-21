@@ -1,0 +1,32 @@
+{
+  "de": {
+    "title": "Bitte bleiben Sie zu Hause",
+    "text": "um sich selbst und andere zu schützen. Lassen Sie uns zusammenarbeiten im {Kampf gegen das Corona-Virus}",
+    "getBanner": "Diesen Hinweis auf Ihre Website anzeigen"
+  },
+  "it": {
+    "title": "Restate a casa",
+    "text": "per proteggere te stesso e gli altri. Lavoriamo insieme e {lotta contro il virus Corona}",
+    "getBanner": "Scarica questo banner sul tuo sito"
+  },
+  "fr": {
+    "title": "Restez à la maison svp",
+    "text": "pour se protéger et protéger les autres. Travaillons ensemble {et lutte contre le virus Corona}",
+    "getBanner": "Obtenez cette bannière sur votre site"
+  },
+  "en": {
+    "title": "Please stay at home",
+    "text": "to protect yourself and others. Let’s work together and {fight against Corona virus}",
+    "getBanner": "Get this banner for your site",
+    "url": "https://www.who.int/emergencies/diseases/novel-coronavirus-2019"
+  },
+  "de-ch": {
+    "url": "https://www.bag.admin.ch/bag/de/home.html"
+  },
+  "fr-ch": {
+    "url": "https://www.bag.admin.ch/bag/fr/home.html"
+  },
+  "it-ch": {
+    "url": "https://www.bag.admin.ch/bag/it/home.html"
+  }
+}

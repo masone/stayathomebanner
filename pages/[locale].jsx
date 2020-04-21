@@ -1,28 +1,38 @@
 import { readJSONSync } from "fs-extra";
 
-const languages = readJSONSync("./data/languages.json");
-const urls = readJSONSync("./data/urls.json");
+const languages = readJSONSync("./languages.json");
+const renderText = (t, url) => {
+  const unlinked = t.replace(/[{}]/g, "");
+  if (!url) {
+    return unlinked;
+  }
 
-function Widget({ title, text, url, link, getBanner }) {
+  const matched = t.match(/(.*)\{(.*)\}/);
+  return matched ? (
+    <span>
+      {matched[1]}
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        {matched[2]}
+      </a>
+    </span>
+  ) : (
+    unlinked
+  );
+};
+
+function Widget({ title, text, url, getBanner }) {
   return (
     <div className="main-container">
       <div className="container">
         <div className="icon" />
         <div className="container-text">
           <span className="text-title">{title}</span>
-          <div className="text-info">
-            {text ? <>{text}&nbsp;</> : null}
-            {url ? (
-              <a href={url} target="__blank" rel="noopener noreferrer">
-                {link}
-              </a>
-            ) : null}
-          </div>
+          <div className="text-info">{renderText(text, url)}</div>
           {getBanner ? (
             <a
               className="get-banner"
               href="https://stayathomebanner.com"
-              target="__blank"
+              target="_blank"
               rel="noopener noreferrer"
             >
               {getBanner}
@@ -44,8 +54,12 @@ function Widget({ title, text, url, link, getBanner }) {
   );
 }
 
-function getDataWithFallback(data, locale, language) {
-  return data ? data[locale] || data[language] || "" : "";
+function getDataWithFallback(field, locale, language) {
+  return (
+    (languages[locale] && languages[locale][field]) ||
+    (languages[language] && languages[language][field]) ||
+    ""
+  );
 }
 
 export async function getStaticProps({ params }) {
@@ -54,22 +68,18 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      title: getDataWithFallback(languages.title, locale, language),
-      text: getDataWithFallback(languages.text, locale, language),
-      link: getDataWithFallback(languages.link, locale, language),
-      getBanner: getDataWithFallback(languages.getBanner, locale, language),
-      url: getDataWithFallback(urls, locale, language) || "",
+      title: getDataWithFallback("title", locale, language),
+      text: getDataWithFallback("text", locale, language),
+      getBanner: getDataWithFallback("getBanner", locale, language),
+      url: getDataWithFallback("url", locale, language),
     },
   };
 }
 
 export async function getStaticPaths() {
+  const availableLanguages = Object.keys(languages);
   return {
-    paths: [
-      { params: { locale: "de-ch" } },
-      { params: { locale: "en-ch" } },
-      { params: { locale: "en-us" } },
-    ],
+    paths: availableLanguages.map((language) => "/" + language),
     fallback: false,
   };
 }
