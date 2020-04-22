@@ -1,15 +1,4 @@
-context("Embeds", () => {
-  it("resizes iframes", () => {
-    cy.visit("/");
-
-    cy.get("#iFrameResizer0[style*=height]").then(($iframe) => {
-      expect($iframe.outerHeight()).to.be.lessThan(150);
-    });
-    cy.get("#iFrameResizer1[style*=height]").then(($iframe) => {
-      expect($iframe.outerHeight()).to.be.lessThan(150);
-    });
-  });
-
+context("iframe", () => {
   describe("country specific link", () => {
     it("is applied to text when available", () => {
       cy.visit("/de-ch");
