@@ -21,7 +21,7 @@ var cookieName = "staythomebanner-closed";
 if(!getCookie(cookieName)){
   iFrameResize({
     autoResize: true,
-    checkOrigin: ["https://embed.stayathomebanner.com", "http://localhost:3000"],
+    checkOrigin: ["https://embed.stayathomebanner.com", "http://localhost:3000", "https://*.masone.now.sh"],
     onClose: function(){
       setCookie(cookieName, "true")
     },
