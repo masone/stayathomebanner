@@ -11,7 +11,12 @@ const renderText = (t, url) => {
   return matched ? (
     <span>
       {matched[1]}
-      <a href={url} target="_blank" rel="noopener noreferrer">
+      <a
+        href={url}
+        className="link-page"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {matched[2]}
       </a>
     </span>
@@ -24,13 +29,13 @@ function Widget({ title, text, url, getBanner }) {
   return (
     <div className="main-container">
       <div className="container">
-        <div className="icon" />
+        <div className="main-icon" />
         <div className="container-text">
-          <span className="text-title">{title}</span>
-          <div className="text-info">{renderText(text, url)}</div>
+          <span className="title">{title}</span>
+          <div className="details">{renderText(text, url)}</div>
           {getBanner ? (
             <a
-              className="get-banner"
+              className="site-banner-text"
               href="https://stayathomebanner.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -41,7 +46,7 @@ function Widget({ title, text, url, getBanner }) {
         </div>
       </div>
       <a
-        className="close"
+        className="close-icon"
         onClick={() => {
           if ("parentIFrame" in window) {
             window.parentIFrame.close();
