@@ -9,7 +9,7 @@
 
 function getCookie(n) {
   var v = document.cookie.match('(^|[^;]+)\\s*' + n + '\\s*=\\s*([^;]+)');
-  return v ? b.pop() : '';
+  return v ? v.pop() : '';
 }
 function setCookie(n,v) {
   var date = new Date();
