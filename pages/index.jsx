@@ -17,25 +17,31 @@ function Widget({ host }) {
 
   return (
     <div className="wrapper">
-      {locales.map((l) => (
-        <a
-          key={l}
-          href={`#${l}`}
-          onClick={() => {
-            setLocale(l);
-          }}
-        >
-          {l}
-        </a>
-      ))}
-
       <h2>Embed code</h2>
+      <div style={{ display: "flex", marginBottom: "1em" }}>
+        {locales.map((l) => (
+          <a
+            key={l}
+            href={`#${l}`}
+            onClick={() => {
+              setLocale(l);
+            }}
+            style={{ marginRight: "0.5em" }}
+          >
+            {l}
+          </a>
+        ))}
+      </div>
       <textarea
-        style={{ border: "1px solid grey", fontSize: "14px" }}
         value={code}
         onChange={() => {}}
         rows="4"
         cols="100"
+        style={{
+          border: "1px solid grey",
+          fontSize: "14px",
+          padding: "0.3em 1em",
+        }}
       />
 
       <h2>Demo</h2>
