@@ -2,7 +2,7 @@ function Widget({ host }) {
   const getCode = (locale) => {
     const url = (host.match("localhost") ? "http://" : "https://") + host;
     return `
-  <iframe class="stayathomebanner" style="display: none;" src="${url}/${locale}" width="100%" scrolling="no" frameborder="0"></iframe>
+  <iframe class="stayathomebanner" style="display: none;" src="${url}/${locale}" width="100%" height="110" scrolling="no" frameborder="0"></iframe>
   <script src="${url}/v1.js"></script>
     `;
   };
