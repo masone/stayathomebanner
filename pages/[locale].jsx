@@ -44,6 +44,7 @@ function Widget({ title, text, url, getBanner }) {
         className="close"
         onClick={() => {
           if ("parentIFrame" in window) {
+            window.parentIFrame.sendMessage("persistClose", "*");
             window.parentIFrame.close();
           }
           return false;

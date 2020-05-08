@@ -1,26 +1,45 @@
+import { useState, useEffect } from "react";
+
+const locales = ["en", "de", "fr", "it", "es"];
+
 function Widget({ host }) {
-  const getCode = (locale) => {
-    const url = (host.match("localhost") ? "http://" : "https://") + host;
-    return `
-  <iframe class="stayathomebanner" style="display: none;" src="${url}/${locale}" width="100%" height="110" scrolling="no" frameborder="0"></iframe>
-  <script src="${url}/v1.js"></script>
-    `;
-  };
+  const url = (host.match("localhost") ? "http://" : "https://") + host;
+
+  const [locale, setLocale] = useState(locales[0]);
+  useEffect(() => {
+    window.initStayathomebanner && window.initStayathomebanner();
+  }, [locale]);
+
+  const code = `
+<iframe id="stayathomebanner" style="display: none;" src="${url}/${locale}" width="100%" height="110" scrolling="no" frameborder="0"></iframe>
+<script src="${url}/v1.js"></script>
+  `;
 
   return (
     <div className="wrapper">
-      <h2>Code</h2>
+      {locales.map((l) => (
+        <a
+          key={l}
+          href={`#${l}`}
+          onClick={() => {
+            setLocale(l);
+          }}
+        >
+          {l}
+        </a>
+      ))}
+
+      <h2>Embed code</h2>
       <textarea
         style={{ border: "1px solid grey", fontSize: "14px" }}
-        defaultValue={getCode("de-ch")}
-        rows="5"
+        value={code}
+        onChange={() => {}}
+        rows="4"
         cols="100"
       />
 
-      <h2>Examples</h2>
-      <div dangerouslySetInnerHTML={{ __html: getCode("en") }} />
-      <div dangerouslySetInnerHTML={{ __html: getCode("de-ch") }} />
-      <div dangerouslySetInnerHTML={{ __html: getCode("en-us") }} />
+      <h2>Demo</h2>
+      <div key={locale} dangerouslySetInnerHTML={{ __html: code }} />
     </div>
   );
 }

@@ -17,16 +17,22 @@ function setCookie(n,v) {
   document.cookie = n + "=" + (v || "")  + "; samesite=lax; expires=" + date.toUTCString(); + "; path=/";
 }
 
-var cookieName = "staythomebanner";
-if(getCookie(cookieName) !== "closed"){
-  iFrameResize({
-    autoResize: true,
-    checkOrigin: false,
-    onClose: function(){
-      setCookie(cookieName, "closed")
-    },
-    onInit: function(iframe){
-      iframe.style.display = "block";
-    }
-  }, ".stayathomebanner")
+function initStayathomebanner(){
+  var cookieName = "staythomebanner";
+  if(getCookie(cookieName) !== "closed"){
+    iFrameResize({
+      autoResize: true,
+      checkOrigin: false,
+      onMessage: function({message}){
+        if(message === "persistClose"){
+          setCookie(cookieName, "closed")
+        }
+      },
+      onInit: function(iframe){
+        iframe.style.display = "block";
+      }
+    }, "#stayathomebanner")
+  }
 }
+
+initStayathomebanner()

@@ -1,34 +1,33 @@
 context("embed", () => {
   beforeEach(() => {
-    cy.setCookie("stayathomebanner", "");
+    setCookie("");
   });
 
   it("gets resized", () => {
     cy.visit("/");
 
-    cy.get("#iFrameResizer0[style*=height]").then(($iframe) => {
-      expect($iframe.outerHeight()).to.be.lessThan(150);
-    });
-    cy.get("#iFrameResizer1[style*=height]").then(($iframe) => {
+    cy.get("#stayathomebanner[style*=height]").then(($iframe) => {
       expect($iframe.outerHeight()).to.be.lessThan(150);
     });
   });
 
   it("is visible", () => {
     cy.visit("/");
-    cy.get("#iFrameResizer0").should("be.visible");
-    cy.get("#iFrameResizer1").should("be.visible");
+    cy.get("#stayathomebanner").should("be.visible");
   });
 
-  it("is hidden when it fails to initialize", () => {
-    cy.get("#iFrameResizer2").should("not.be.visible");
+  it.skip("is hidden when it fails to initialize", () => {
+    cy.get("#stayathomebanner").should("not.be.visible");
   });
 
   it("is hidden when cookie is set", () => {
-    cy.setCookie("stayathomebanner", "closed");
+    setCookie("closed");
     cy.visit("/");
-    cy.get("#iFrameResizer0").should("not.be.visible");
-    cy.get("#iFrameResizer1").should("not.be.visible");
-    cy.get("#iFrameResizer2").should("not.be.visible");
+
+    cy.get("#stayathomebanner").should("not.be.visible");
   });
 });
+
+function setCookie(value) {
+  cy.setCookie("stayathomebanner", value, { sameSite: "lax" });
+}
