@@ -12,7 +12,8 @@
   "fr": {
     "title": "Restez à la maison svp",
     "text": "pour se protéger et protéger les autres. Travaillons ensemble {et lutte contre le virus Corona}",
-    "getBanner": "Obtenez cette bannière sur votre site"
+    "getBanner": "Obtenez cette bannière sur votre site",
+    "url": "https://www.who.int/fr/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
   },
   "en": {
     "title": "Please stay at home",
@@ -28,5 +29,35 @@
   },
   "it-ch": {
     "url": "https://www.bag.admin.ch/bag/it/home.html"
+  },
+  "de-de": {
+    "url": "https://www.zusammengegencorona.de"
+  },
+  "fr-fr": {
+    "url": "https://www.gouvernement.fr/info-coronavirus"
+  },
+  "es-es": {
+    "url": "https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/home.htm"
+  },
+  "fr-es": {
+    "url": "https://www.mscbs.gob.es/fr/profesionales/saludPublica/ccayes/alertasActual/nCov-China/home.htm"
+  },
+  "en-es": {
+    "url": "https://www.mscbs.gob.es/es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/home.htm"
+  },
+  "ca-es": {
+    "url": "https://www.mscbs.gob.es/ca/profesionales/saludPublica/ccayes/alertasActual/nCov-China/home.htm"
+  },
+  "pt-pt": {
+    "url": "https://covid19.min-saude.pt/"
+  },
+  "it-it": {
+    "url": "http://www.governo.it/it/faq-iorestoacasa"
+  },
+  "en-uk": {
+    "url": "https://www.gov.uk/coronavirus"
+  },
+  "en-us": {
+    "url": "https://www.coronavirus.gov/"
   }
 }

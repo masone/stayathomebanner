@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
+import languages from "../languages.json";
 
-const locales = ["en", "de", "fr", "it", "es"];
-
-function Widget({ host }) {
+function Widget({ host, availableLanguages }) {
   const url = (host.match("localhost") ? "http://" : "https://") + host;
 
-  const [locale, setLocale] = useState(locales[0]);
+  const [locale, setLocale] = useState("en");
   useEffect(() => {
     window.initStayathomebanner && window.initStayathomebanner();
   }, [locale]);
@@ -19,7 +18,7 @@ function Widget({ host }) {
     <div className="wrapper">
       <h2>Embed code</h2>
       <div style={{ display: "flex", marginBottom: "1em" }}>
-        {locales.map((l) => (
+        {availableLanguages.map((l) => (
           <a
             key={l}
             href={`#${l}`}
@@ -51,7 +50,8 @@ function Widget({ host }) {
 }
 
 Widget.getInitialProps = ({ req }) => {
-  return { host: req.headers.host };
+  const availableLanguages = Object.keys(languages);
+  return { host: req.headers.host, availableLanguages };
 };
 
 export default Widget;
