@@ -1,6 +1,5 @@
-import { readJSONSync } from "fs-extra";
+import languages from "../languages.json";
 
-const languages = readJSONSync("./languages.json");
 const renderText = (t, url) => {
   const unlinked = t.replace(/[{}]/g, "");
   if (!url) {
