@@ -36,20 +36,11 @@
   "fr-fr": {
     "url": "https://www.gouvernement.fr/info-coronavirus"
   },
-  "es-es": {
-    "url": "https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/home.htm"
-  },
   "fr-es": {
     "url": "https://www.mscbs.gob.es/fr/profesionales/saludPublica/ccayes/alertasActual/nCov-China/home.htm"
   },
   "en-es": {
     "url": "https://www.mscbs.gob.es/es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/home.htm"
-  },
-  "ca-es": {
-    "url": "https://www.mscbs.gob.es/ca/profesionales/saludPublica/ccayes/alertasActual/nCov-China/home.htm"
-  },
-  "pt-pt": {
-    "url": "https://covid19.min-saude.pt/"
   },
   "it-it": {
     "url": "http://www.governo.it/it/faq-iorestoacasa"
