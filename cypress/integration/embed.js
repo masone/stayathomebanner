@@ -1,6 +1,6 @@
 context("embed", () => {
   beforeEach(() => {
-    cy.setCookie("stayathomebanner-closed", "");
+    cy.setCookie("stayathomebanner", "");
   });
 
   it("gets resized", () => {
@@ -25,7 +25,7 @@ context("embed", () => {
   });
 
   it("is hidden when cookie is set", () => {
-    cy.setCookie("stayathomebanner-closed", "true");
+    cy.setCookie("stayathomebanner", "closed");
     cy.visit("/");
     cy.get("#iFrameResizer0").should("not.be.visible");
     cy.get("#iFrameResizer1").should("not.be.visible");

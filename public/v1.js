@@ -14,16 +14,16 @@ function getCookie(n) {
 function setCookie(n,v) {
   var date = new Date();
   date.setTime(date.getTime() + (30*24*60*60*1000));
-  document.cookie = n + "=" + (v || "")  + "; expires=" + date.toUTCString(); + "; path=/";
+  document.cookie = n + "=" + (v || "")  + "; samesite=lax; expires=" + date.toUTCString(); + "; path=/";
 }
 
-var cookieName = "staythomebanner-closed";
-if(!getCookie(cookieName)){
+var cookieName = "staythomebanner";
+if(getCookie(cookieName) !== "closed"){
   iFrameResize({
     autoResize: true,
     checkOrigin: false,
     onClose: function(){
-      setCookie(cookieName, "true")
+      setCookie(cookieName, "closed")
     },
     onInit: function(iframe){
       iframe.style.display = "block";
