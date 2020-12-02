@@ -28,8 +28,8 @@ a:hover {
 }
 
 .main-container {
+  border-bottom: 2px solid #858585;
   display: flex;
-  background-color: #787878;
   background-image: url("icons/covid.svg"), linear-gradient(to bottom, #787878, #000000 98%);
   -webkit-background-size: contain;
   -moz-background-size: contain;
@@ -44,12 +44,11 @@ a:hover {
   margin: 10px;
 }
 
-.icon {
+.main-icon {
   height: 76px;
   width: 115px;
   object-fit: contains;
   background: url("icons/doctors.svg");
-  background-size: 77px;
   background-repeat: no-repeat;
 }
 
@@ -57,23 +56,24 @@ a:hover {
   width: 100%;
 }
 
-.text-title, .text-info {
+.title, .details {
   color: white;
 }
 
-.text-title {
+.title {
   font-size: 18px;
   font-weight: bold;
 }
 
-.text-info {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+.details {
   font-size: 12px;
 }
 
-.get-banner {
+.link-page {
+  display: inline-block;
+}
+
+.site-banner-text {
   display: none;
   color: #8e8e8e;
   font-weight: normal;
@@ -81,7 +81,7 @@ a:hover {
   font-size: 10px;
 }
 
-.close {
+.close-icon {
   cursor: pointer;
   padding: 15px;
   background: url(icons/close.svg);
@@ -89,17 +89,17 @@ a:hover {
 }
 
 @media (min-width: 425px) {
-  .text-info {
+  .details {
     font-size: 14px;
   }
-  .icon {
+  .main-icon {
     width: 90px;
     margin: 5px;
   }
 }
 
 @media (min-width: 768px) {
-  .get-banner {
+  .site-banner-text {
     display: inline-block;
   }
 }
